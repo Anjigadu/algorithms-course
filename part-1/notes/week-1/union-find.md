@@ -48,6 +48,7 @@ Data structure
   
     find all occurance of id[q] in id[] array and replace with id[p] or vice versa.
 
+  Tree Flat
 
 Quick Union / Lazy approach
 -
@@ -59,10 +60,12 @@ Data structure:
   Root of i is parent[parent[parent...parent[i]...]]]
   
   
-  Find : 
+  Find : O(n)
   
     Check if p and q have the same root.
     
-  Union :
+  Union : O(1)
   
     To merge  change, parent of root(p) and change it into root(q) or vice versa
+  
+  Tree  tall.
