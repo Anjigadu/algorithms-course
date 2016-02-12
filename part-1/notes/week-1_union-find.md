@@ -23,3 +23,9 @@ Find command : Is there a path connecting two objects
 Connected Components:
 
   Maximal set of objects that are mutually connected.
+
+
+Implementation:
+
+  Find is to check whether the two objects are in same  component
+  Union is to replace components containing two objects with their union
