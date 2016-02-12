@@ -19,3 +19,7 @@ Find command : Is there a path connecting two objects
 * Reflexive
 * Symmetric
 * Transitive
+
+Connected Components:
+
+  Maximal set of objects that are mutually connected.
