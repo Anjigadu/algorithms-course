@@ -31,6 +31,20 @@ Implementation:
   Union is to replace components containing two objects with their union
 
 
-Quick Find
+Quick Find / eager Approach
 -
+
+Data structure 
+
+  Integer array id[] of size N
+  
+  Intrepretation  : p and q are connected iff they have the same id.
+  
+  Find: O(1)
+  
+    If id[p] == id[q] then same component not otherwise.
+    
+  Union: O(n)
+  
+    find all occurance of id[q] in id[] array and replace with id[p] or vice versa.
 
