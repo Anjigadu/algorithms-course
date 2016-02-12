@@ -48,3 +48,21 @@ Data structure
   
     find all occurance of id[q] in id[] array and replace with id[p] or vice versa.
 
+
+Quick Union / Lazy approach
+-
+
+Data structure:
+
+  Integer array parent[] of size N.
+  Interpretation: parent[i] is the parent of i.
+  Root of i is parent[parent[parent...parent[i]...]]]
+  
+  
+  Find : 
+  
+    Check if p and q have the same root.
+    
+  Union :
+  
+    To merge  change, parent of root(p) and change it into root(q) or vice versa
