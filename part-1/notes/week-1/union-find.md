@@ -114,3 +114,12 @@ Variations of Weighter QU
 * Union by size - number of objects in tree
 * Union by height - height of the tree
 * Union by Rank -  ????
+
+
+Applications
+-
+
+* Percolation
+* Dynamic Connectivity
+* Image processing
+* Kruskal min spanning tree
