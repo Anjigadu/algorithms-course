@@ -7,3 +7,6 @@ This contains the general notes for the Part1 course.
 
 * Data structure - method to store information
 
+
+
+[Book Site](http://algs4.cs.princeton.edu/home/)
