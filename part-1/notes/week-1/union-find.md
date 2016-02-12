@@ -29,3 +29,8 @@ Implementation:
 
   Find is to check whether the two objects are in same  component
   Union is to replace components containing two objects with their union
+
+
+Quick Find
+-
+
