@@ -21,7 +21,7 @@ public class PercolationStats {
   */
   public PercolationStats(int size, int numTest) {
 
-    if ( size <= 0 || numTest <= 0 ) {
+    if (size <= 0 || numTest <= 0) {
       throw new IllegalArgumentException();
     }
     thresholds = new double[numTest];
@@ -30,13 +30,13 @@ public class PercolationStats {
     for (int test = 0; test < numTest; test++) {
       opened = 0;
       Percolation percolation = new Percolation(size);
-      while ( !percolation.percolates()) {
+      while (!percolation.percolates()) {
         
-        int randomX = StdRandom.uniform(1,size + 1);
-        int randomY = StdRandom.uniform(1,size + 1);
-        if ( !percolation.isOpen(randomX, randomY)) {
+        int randomX = StdRandom.uniform(1, size + 1);
+        int randomY = StdRandom.uniform(1, size + 1);
+        if (!percolation.isOpen(randomX, randomY)) {
           opened += 1;
-          percolation.open(randomX,randomY); 
+          percolation.open(randomX, randomY); 
         }
         
         
@@ -45,7 +45,7 @@ public class PercolationStats {
     }
     mean = StdStats.mean(thresholds);
     stddev = StdStats.stddev(thresholds);
-    factor = ( 1.96 * mean) / Math.sqrt(numTest);
+    factor = (1.96 * stddev) / Math.sqrt(numTest);
     confidenceLo = mean - factor;
     confidenceHi = mean + factor;
   } 
@@ -89,7 +89,7 @@ public class PercolationStats {
   * test client (optional).
   * @param args arguments
   */
-  public static void main( String[] args ) {
+  public static void main(String[] args) {
     int size = Integer.parseInt(args[0]);
     int numTest = Integer.parseInt(args[1]);
     PercolationStats stats = new PercolationStats(size, numTest);

@@ -5,6 +5,8 @@ import edu.princeton.cs.algs4.WeightedQuickUnionUF;
 
 public class Percolation {
   
+  private static int[] xAxis = {0, 1, 0, -1};
+  private static int[] yAxis = {1, 0, -1, 0};
   private int size;
   private boolean[][] grid;
   private boolean isPercolates;
@@ -12,15 +14,14 @@ public class Percolation {
   private int bottom;
   private WeightedQuickUnionUF topDisjointSet;
   private WeightedQuickUnionUF bottomDisjointSet;
-  private static int[] xAxis = {0,1,0,-1};
-  private static int[] yAxis = {1,0,-1,0};
+  
   
   /**
   * create N-by-N grid, with all sites blocked.
   * @param num size
   */
   public Percolation(int num) {
-    if ( num <= 0 ) {
+    if (num <= 0) {
       throw new IllegalArgumentException();
     }
     isPercolates = false;
@@ -30,8 +31,8 @@ public class Percolation {
     grid = new boolean[size + 1][size + 1];
     topDisjointSet = new WeightedQuickUnionUF(bottom + 1);
     bottomDisjointSet = new WeightedQuickUnionUF(bottom + 1);
-    for (int xindex = 1; xindex <= size ;xindex++) {
-      for (int yindex = 1; yindex <= size ;yindex++) {
+    for (int xindex = 1; xindex <= size; xindex++) {
+      for (int yindex = 1; yindex <= size; yindex++) {
         grid[xindex][yindex] = false;  
       }
     }
@@ -43,17 +44,17 @@ public class Percolation {
   * @param yindex  y index
   */
   public void open(int xindex, int yindex) {
-    if (!checkBoundary(xindex,yindex)) {
+    if (!isWithinGrid(xindex, yindex)) {
       throw new IndexOutOfBoundsException();
     }
-    if ( grid[xindex][yindex] == false) {
+    if (!grid[xindex][yindex]) {
       grid[xindex][yindex] = true;
-      int currElement = getIndexinDisjointSet(xindex,yindex);
-      for (int neigh = 0 ; neigh < 4; neigh++) {
+      int currElement = getIndexinDisjointSet(xindex, yindex);
+      for (int neigh = 0; neigh < 4; neigh++) {
         int neighX = xindex + xAxis[neigh];
         int neighY = yindex + yAxis[neigh];
-        if ( checkBoundary(neighX,neighY) && grid[neighX][neighY] ) {
-          int neighElement = getIndexinDisjointSet(neighX,neighY);
+        if (isWithinGrid(neighX, neighY) && grid[neighX][neighY]) {
+          int neighElement = getIndexinDisjointSet(neighX, neighY);
           bottomDisjointSet.union(currElement, neighElement);
           topDisjointSet.union(currElement, neighElement);
         }
@@ -80,7 +81,7 @@ public class Percolation {
   * @return true if open site
   */
   public boolean isOpen(int xindex, int yindex) {
-    if (checkBoundary(xindex,yindex)) {
+    if (isWithinGrid(xindex, yindex)) {
       return grid[xindex][yindex];
     } else {
       throw new IndexOutOfBoundsException();
@@ -95,10 +96,14 @@ public class Percolation {
   */
   public boolean isFull(int xindex, int yindex) {
 
-    if (checkBoundary(xindex,yindex) && grid[xindex][yindex]) {
-      return topDisjointSet.connected(getIndexinDisjointSet(xindex, yindex), top);
-    } else {
+    if (!isWithinGrid(xindex, yindex)) {
       throw new IndexOutOfBoundsException();
+    } else {
+      if (grid[xindex][yindex]) {
+        return topDisjointSet.connected(getIndexinDisjointSet(xindex, yindex), top);
+      } else {
+        return false;
+      }
     }
   }
 
@@ -117,9 +122,9 @@ public class Percolation {
   * @param yindex y index
   * @return true if within grid
   */
-  private boolean checkBoundary(int xindex, int yindex) {
+  private boolean isWithinGrid(int xindex, int yindex) {
    
-    return !( xindex <= 0 || xindex > size || yindex <= 0 || yindex > size ); 
+    return !(xindex <= 0 || xindex > size || yindex <= 0 || yindex > size); 
   }
   
   /**
@@ -129,7 +134,7 @@ public class Percolation {
   * @return index in disjoint set
   */
   private int getIndexinDisjointSet(int xindex, int yindex) {
-    return ( ((xindex - 1) * size) + yindex);
+    return (((xindex - 1) * size) + yindex);
    
   }
   
@@ -137,7 +142,7 @@ public class Percolation {
   * test client (optional).
   * @param args arguments
   */
-  public static void main( String[] args ) {
+  public static void main(String[] args) {
 
   }
 }
