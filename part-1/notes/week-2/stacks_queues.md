@@ -47,3 +47,21 @@ Double the array when stack is full
 half the array when stack is one quater full
 
 Maintain invariant that stack is always between 25% and 100%
+
+
+Queue
+-
+
+Implementation using Linked list
+
+maintain first and last pointer.
+
+* enqueue - insert at the last node
+* dequeue - remove the first node
+
+Implementation using Array
+ 
+maintain head and tail
+
+* enqueue - insert at the tail 
+* dequeue - remove the head
