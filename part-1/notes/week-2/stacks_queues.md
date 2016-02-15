@@ -65,3 +65,19 @@ maintain head and tail
 
 * enqueue - insert at the tail 
 * dequeue - remove the head
+
+
+Generics & Iterator
+-
+
+Generics allows that a single data structure implementation for multiple data types.
+
+Iterator provides an easy way to iterate the elements without knowing the underlying data structure.
+
+
+Bag
+-
+
+Provides way to add items to collection and iterating.
+
+make use of stack without pop() or queue without deque.
