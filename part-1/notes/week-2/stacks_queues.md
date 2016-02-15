@@ -81,3 +81,22 @@ Bag
 Provides way to add items to collection and iterating.
 
 make use of stack without pop() or queue without deque.
+
+
+Applications
+-
+
+* Undo in word processer
+* Back button in browser
+* compiler function call stack
+* Postfix conversion
+* Infix evaluation
+
+
+Infix evaluation using two stack algorithm of Djikistra
+
+value stack  - to store the values
+
+operator stack - to store the operators
+
+if left paranthesis ignore, if right paranthesis get two values  and a operator put the result back to value stack
