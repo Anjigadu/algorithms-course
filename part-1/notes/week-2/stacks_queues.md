@@ -38,3 +38,12 @@ Defect : Fixed size can be overcome by resizing
 
 Note:
 To avoid loitering problem set the array value as null while pop.
+
+
+Array Resizing
+-
+
+Double the array when stack is full
+half the array when stack is one quater full
+
+Maintain invariant that stack is always between 25% and 100%
