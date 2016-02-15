@@ -30,3 +30,11 @@ Space : O(40N) Since for each element we have to store next references space ove
 
 Implementation using Array
 
+* push - insert at position N
+* pop - remove at position N-1
+* empty - check N == 0
+
+Defect : Fixed size can be overcome by resizing
+
+Note:
+To avoid loitering problem set the array value as null while pop.
