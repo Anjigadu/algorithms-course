@@ -12,10 +12,27 @@ common order of growth functions
  * 1 Constant
  
   statement
+
  * log N lograthimic
+
   binary search
+
  * N linear
+
+  single loop
+
  * Nlog N lineararithmetic
+
+  divide and conquer 
+
  * N^2 quadratic
+  
+  double loop
+
  * N^3 cubic
+ 
+  triple loop
+
  * 2^N exponential
+  
+  check all the subsets
