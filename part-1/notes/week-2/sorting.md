@@ -38,3 +38,23 @@ Quadratic time even though the array is already sorted
 Linear number of exchanges.
 
 
+
+Insertion Sort
+-
+
+In iteration i, swap a[i] with each larger entry to its left.
+
+Invariants
+
+* Entries to the left of i are in ascending order
+* Entries to the right of i are not in ascending order
+
+
+For randomly sorted array,
+
+Compares ~1/4 N^2
+Exchanges ~1/4 N^2
+
+Inversion:
+ It's a pair of keys that are out of order.
+
