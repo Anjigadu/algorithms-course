@@ -58,3 +58,33 @@ Exchanges ~1/4 N^2
 Inversion:
  It's a pair of keys that are out of order.
 
+
+Shell Sort
+-
+
+Insertion sort is inefficient because it moves the elements one at a time.
+
+So in shell short we move the items h positions.
+
+Idea: Move entries more than one position at a time by h-sorting the array.
+
+` h-sort the array for the decreasing sequence of values of h`
+
+How to h-sort the array?
+
+ Insertion sort with stride length `h`
+ 
+Why insertion sort?
+
+* for bigger increments - small sub array
+* for smaller increments - already partially sorted.
+
+
+A g-sorted array will remain g-sorted after h-sorting also.
+
+h sequence
+
+`3X + 1`
+
+
+
