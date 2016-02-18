@@ -88,3 +88,8 @@ h sequence
 
 
 
+Convex hull
+-
+
+Convex hull of a set of N points is the smallest perimeter fence enclosing the points.
+
