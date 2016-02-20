@@ -25,7 +25,17 @@ common order of growth functions
 
   divide and conquer 
 
+* N^2 quadratic
+  
+  double loop
 
+ * N^3 cubic
+ 
+  triple loop
+
+ * 2^N exponential
+  
+  check all the subsets
 
 
 Best Case
@@ -92,14 +102,4 @@ bit = 0 or 1
 B   = 8 bits
 MB  = 2^20 bytes
 GB  = 2^30 bytes
- * N^2 quadratic
-  
-  double loop
-
- * N^3 cubic
  
-  triple loop
-
- * 2^N exponential
-  
-  check all the subsets
