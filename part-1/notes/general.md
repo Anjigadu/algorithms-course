@@ -18,3 +18,14 @@ Steps :
   * Iterate until satisfied
 
 [Book Site](http://algs4.cs.princeton.edu/home/)
+
+
+Assertion usage
+-
+
+ * statements to test assumptions/ preconditions about the program
+ * can be enable/ disable at runtime
+   ` java -ea Prog`
+   ` java -da Prog`
+ * Best practise : Use assertions to check internal invariants
+ 
