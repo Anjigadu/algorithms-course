@@ -58,3 +58,14 @@ Basic plan
 
 * Pass through array merging sub arrays of size 1
 * Repeat the steps for sub arrays of size 2,4,8,16...
+
+Bottomline - no recursion needed
+
+Pseudocode
+-
+ Sort(Comparable[] a)
+  N = a.length
+  aux = Comparable[N];
+  for (int sz = 1; sz<N;sz = sz+sz)
+    for(int lo = 0; lo < N-sz ; lo += sz+sz) 
+     merge(a,lo,lo+sz-1,Math.min(lo+sz+sz-1,N-1));
