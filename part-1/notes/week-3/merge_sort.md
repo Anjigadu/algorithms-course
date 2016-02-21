@@ -50,6 +50,16 @@ Practical improvements
 * Stop merging if last element of left array is lesser than first element of right array.
 * Switch the role of aux and input array
 
+Stability
+-
+
+* First sort by name, then sort by section.
+* Second sort preserves the sorting result of first sort
+* equal items never pass each other.
+* do not use less than or equal to instead of lesss than
+
+Insertion & merge sort are stable sorts.
+
 Bottom up Merge Sort
 =
 
@@ -69,3 +79,4 @@ Pseudocode
   for (int sz = 1; sz<N;sz = sz+sz)
     for(int lo = 0; lo < N-sz ; lo += sz+sz) 
      merge(a,lo,lo+sz-1,Math.min(lo+sz+sz-1,N-1));
+
