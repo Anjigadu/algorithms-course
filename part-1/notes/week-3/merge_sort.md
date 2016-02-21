@@ -49,3 +49,12 @@ Practical improvements
 * Use insertion sort for small arrays. ( N=7)
 * Stop merging if last element of left array is lesser than first element of right array.
 * Switch the role of aux and input array
+
+Bottom up Merge Sort
+=
+
+Basic plan
+-
+
+* Pass through array merging sub arrays of size 1
+* Repeat the steps for sub arrays of size 2,4,8,16...
