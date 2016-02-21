@@ -35,3 +35,17 @@ Pseudocode
     aux = new Comparable[a.length]; // Important not to create in recursive method call.
     
     sort(a,aux,0,a.length-1);
+
+Proposition
+-
+
+* compares NlgN
+* array access 6NlgN
+
+
+Practical improvements
+-
+
+* Use insertion sort for small arrays. ( N=7)
+* Stop merging if last element of left array is lesser than first element of right array.
+* Switch the role of aux and input array
