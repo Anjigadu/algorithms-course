@@ -157,3 +157,58 @@ pseudocode
  
  
  Quick select uses linear time in average
+
+ 
+ 
+ Duplicates
+ -
+ 
+ * group a column and filter
+ * finding collinear points
+ * filter emails based on sender
+ 
+ 3-way partitioning
+ 
+ Goal : Partition the array into three parts so that
+ 
+  * Entries between lt & gt equal to parition item v
+  * No larger elements to the left of lt
+  * No smaller elements to the right of gt
+  
+  
+ Pseudocode
+ -
+ 
+ * Let v be the partitioning item a[lo]
+ * scan i from left to right (until i crosses gt)
+	+ (a[i] < v ) : exch a[lt] with a[i] & increment i,lt
+	+ (a[i] > v) : exch a[gt] with a[i] & increment gt
+	+ (a[i] == v) : increment i
+	
+
+sort(Comparable[] a,int lo,int hi){
+
+ if (hi<=lo) return;
+ lt = lo;
+ gt = hi -1;
+ v = a[lo];
+ i = lo;
+ while ( i <=gt) {
+ 
+	if (a[i] < v) then exch(a,lt++,i++);
+	else if (a[i] > v) then exch(a,gt++,i);
+	else then i++;
+	
+ }
+ // lt -> gt contains equal elements so we can skip them for next sorting
+ sort(a,lo,lt-1);
+ sort(a,gt+1,hi);
+
+}
+
+	
+
+ Quick sort - 3 way partition is entrophy optimal
+ 
+ 
+ Bottom line : Randomized quick sort with 3 way partitioning will be lineararithmetic to linear for practical applications.
