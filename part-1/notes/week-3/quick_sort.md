@@ -103,3 +103,57 @@ Quick sort,
  * In place sorting
  * Not stable
  
+Selection
+-
+
+Given N items, find the kth largest
+Ex: min(k=0), max(k=N), median(k= N/2)
+
+Applications
+
+* order statistics
+* find the top k
+
+
+Using theory
+
+* sort using NlogN and find
+
+Quick Select
+-
+
+
+In partition,
+
+  + **a[j] is in its place**
+  + no larger entry to the left of j
+  + no smaller entry to the right of j
+  
+Repeat in one sub array depending upon j and if j==k then return a[j]
+
+pseudocode
+-
+
+ select(Comparable[] a,int k){
+  
+ shuffle(a);
+   
+   int lo = 0 , hi = length -1;
+ 
+   while (hi > lo) {
+   
+    int j = partition(a,lo,hi);
+	
+	if ( j < k) lo = j+1;
+	
+	else if (j > k) hi = j-1;
+	
+	else return a[k];   
+   
+   }
+   
+	return a[k];
+ }
+ 
+ 
+ Quick select uses linear time in average
