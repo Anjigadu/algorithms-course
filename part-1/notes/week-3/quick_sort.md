@@ -84,3 +84,22 @@ Implementation details
 * preserving randomness - shuffle the array
 * equal keys - it's better to stop on keys equal to the partioning item's key
 
+
+Best case - O(NlogN)
+Worst case - O(N^2)
+Average case - compares ~ 2NlnN = 1.39NlgN & exch ~1/3NlnN
+
+practical improvements
+-
+
+* use insertion sort for N=10
+* best choice of pivot is median - use median of 3 (of random items)
+* 
+
+Conclusion
+
+Quick sort,
+
+ * In place sorting
+ * Not stable
+ 
