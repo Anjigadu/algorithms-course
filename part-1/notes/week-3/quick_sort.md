@@ -73,3 +73,14 @@ recur_sort(a,lo,j-1);
 recur_sort(a,j+1,hi);
 
 }
+
+
+Implementation details
+-
+
+* Partitioning in place - using auxilary array but it's not worth.
+* Terminating the loop - testing wether the pointers crossed or not is tricky
+* statying in bounds - the j== lo is redundant but i==hi is not
+* preserving randomness - shuffle the array
+* equal keys - it's better to stop on keys equal to the partioning item's key
+
