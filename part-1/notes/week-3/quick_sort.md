@@ -212,3 +212,15 @@ sort(Comparable[] a,int lo,int hi){
  
  
  Bottom line : Randomized quick sort with 3 way partitioning will be lineararithmetic to linear for practical applications.
+
+
+Tukey's ninther: 
+
+* Median of median of three samples, each of three entries instead of shuffling.
+* approximates the median of 9
+* Uses at most 12 compares
+
+Better than shuffling because of less costs and no movement of data
+
+
+
