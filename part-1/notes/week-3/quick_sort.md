@@ -39,7 +39,7 @@ parition(Comparable[] a,int lo,int hi)
 
  j = hi + 1
 
- while(true)
+ while(true){
 
   while( a[++i] < a[lo] )
 
@@ -52,7 +52,9 @@ parition(Comparable[] a,int lo,int hi)
    if( i >=j) break; // break the loop when pointers crossed
 
    exch(a[i],a[j]);
-
+   
+ }
+ 
  exch(a[j],a[lo])
  
  return j;
