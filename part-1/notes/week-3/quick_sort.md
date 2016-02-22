@@ -28,3 +28,31 @@ phase1
 phase 2
 
 * when pointers crossed exch a[lo] with a[j]
+
+
+Pseudocode
+-
+
+parition(Comparable[] a,int lo,int hi)
+
+ i = lo
+
+ j = hi + 1
+
+ while(true)
+
+  while( a[++i] < a[lo] )
+
+   if (i==hi) break;
+
+  while (a[--j] > a[lo])
+
+    if (j == lo) break;
+
+   if( i >=j) break; // break the loop when pointers crossed
+
+   exch(a[i],a[j]);
+
+ exch(a[j],a[lo])
+ 
+ return j;
