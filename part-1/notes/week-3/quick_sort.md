@@ -58,3 +58,18 @@ parition(Comparable[] a,int lo,int hi)
  exch(a[j],a[lo])
  
  return j;
+
+sort(Comaprable[] a){
+ shuffle(a);
+ recur_sort(a,0,a.length-1);
+}
+
+recur_sort(Comparable[] a,int lo,int hi){
+
+if( hi <=lo) return;
+
+int j = partition(a,lo,hi);
+recur_sort(a,lo,j-1);
+recur_sort(a,j+1,hi);
+
+}
