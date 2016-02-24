@@ -47,6 +47,7 @@ Child's key become larger than parent's key
 * Exchange key with parent's key
 * repeat until the heap order restored.
 
+bottom line : Going upwards
 
 Insertion in a heap
 -
@@ -57,5 +58,23 @@ Insertion in a heap
 Cost: at most 1 + log2N
 
 
+Demotion in a heap
+-
 
+ Parent's key becomes smaller than its one/ both children's keys
+ 
+ * Exchange parent's key with the key of the larger child.
+ * Repeat until the heap property restored.
+
+bottom line : going downwards.
+
+Deletion of maximum in a heap
+-
+
+* Save the root value in temp
+* Exchange the root's value with the last value ( a[N] )
+* Demotion of root to fit into it's correct position
+
+
+note: Dereference the N+1 element to prevent loitering
 
