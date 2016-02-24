@@ -78,3 +78,9 @@ Deletion of maximum in a heap
 
 note: Dereference the N+1 element to prevent loitering
 
+
+Best Practise
+-
+
+Use immutable keys
+
