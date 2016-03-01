@@ -29,3 +29,15 @@ Assertion usage
    ` java -da Prog`
  * Best practise : Use assertions to check internal invariants
  
+
+Standard recipe for Equals() implementation
+-
+
+* Optimisation for reference equivality ( this == obj) return true;
+* Check against null
+* check two objects are same type and cast
+* Compare each significatnt field
+  + If primitive, use ==
+  + If refernce, use equals()
+  + If array, do for each entry
+  
