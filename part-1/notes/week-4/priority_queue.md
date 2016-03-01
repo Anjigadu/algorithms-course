@@ -84,3 +84,45 @@ Best Practise
 
 Use immutable keys
 
+
+Heap Sort
+-
+
+Basic Plan
+
+ * Create a max-heap with all N keys - inplace
+ * Repeatedly remove the maximum key (and put it in the N - i-1 th position) - inplace
+ 
+
+Pseudocode
+-
+
+Build heap using bottom up method
+ 
+ for (i = N/2 ;i >= 1;i++)
+  
+  sink(a,i,N);
+
+Second pass - sort down
+
+ while (N > 1)
+ 
+  exch (a,1,N--)
+  sink(a,1,N);
+  
+Mathematical Analysis
+
+Heap constuction uses Comparision & exch <= 2N
+Heap sort uses comp & exchanges <= 2NlgN
+
+
+Bottom line
+-
+Heap sort is an in place algorithm with NlogN worst case time.
+
+ * Heap sort is optimal for both space and time but
+ * Not stable
+ * Not cache efficient
+ * Inner loop longer than quick sort
+ 
+
