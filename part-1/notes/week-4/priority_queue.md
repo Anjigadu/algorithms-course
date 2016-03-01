@@ -126,3 +126,7 @@ Heap sort is an in place algorithm with NlogN worst case time.
  * Inner loop longer than quick sort
  
 
+Event driven simulation
+-
+
+Goal - simulate the motion of N moving particles that move according to the laws of elastic collision.
