@@ -9,17 +9,19 @@ import edu.princeton.cs.algs4.StdRandom;
 public class RandomizedQueue<Item> implements Iterable<Item> {
 
  private Item[] items = null;
- private int size;
  private int capacity;
- private int lastInserted;
+ private int head; // exactly where to remove (first non null element)
+ private int tail; // exactly where to put (ie, last element pos +1)
+ private int size;
  /**
   * construct an empty randomized queue
   */
  public RandomizedQueue() {
   capacity = 2;
   items = (Item[]) new Object[capacity];
+  head = 0;
+  tail = 0;
   size = 0;
-  lastInserted = 0;
  }
 
  /**
@@ -45,10 +47,10 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
  public void enqueue(Item item) {
   if (item == null)
    throw new NullPointerException();    
-  if (lastInserted == capacity)
+  if (tail == capacity)
    resize(capacity*2);
+  items[tail++] = item;
   size++;
-  items[lastInserted++] = item;
  }
 
  /**
@@ -58,15 +60,12 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
  public Item dequeue() {
   if (size == 0)
    throw new NoSuchElementException();
-  if (lastInserted*4 == capacity)
+  if (size*4 == capacity)
    resize(capacity/2);
-  int index = StdRandom.uniform(lastInserted);
-  Item item = items[index];
-  while (item == null) {
-   index = StdRandom.uniform(lastInserted);
-   item = items[index];
-  }
-  items[index] = null;
+  int randIndex = StdRandom.uniform(head, tail);
+  Item item = items[randIndex];
+  items[randIndex] = items[head++];
+  items[head-1] = null;
   size--;
   return item;
  }                    
@@ -77,9 +76,9 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
   * @return
   */
  public Item sample() {
-  if (size == 0)
+  if (size() == 0)
    throw new NoSuchElementException();
-  Item item = items[size-1];
+  Item item = items[StdRandom.uniform(head, tail)];
   return item;
  }
 
@@ -94,14 +93,14 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
  private void resize(int newCapacity) {
   Item[] newArray = (Item[]) new Object[newCapacity];
   int k = 0;
-  for (int i = 0; i < capacity; i++) {
+  for (int i = head; i < tail; i++) {
    if (items[i] != null)
     newArray[k++] = items[i]; 
   }
-  size = k;
+  head = 0;
   capacity = newCapacity;
   items = newArray;
-  lastInserted = k;
+  tail = size;
  }
 
  private class RQueueIterator implements Iterator<Item> {
@@ -111,15 +110,15 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
   private int max;
   RQueueIterator() {
    cursor = 0;
-   if (size > 0) {
-    iterArray = (Item[]) new Object[size];
+   if (size() > 0) {
+    iterArray = (Item[]) new Object[size()];
     int k = 0;
-    for (int i = 0; i < capacity; i++) {
+    for (int i = head; i < tail; i++) {
      if (items[i] != null)
       iterArray[k++] = items[i]; 
     }
     StdRandom.shuffle(iterArray);
-    max = size;
+    max = k;
    }
   }
 
@@ -156,6 +155,9 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
   for (int i : rQueue) {
    System.out.println(i);
   }
+  rQueue.sample();
+  rQueue.sample();
+  rQueue.sample();
   rQueue.dequeue();
   System.out.println("size" + rQueue.size());
   System.out.println("capacity" + rQueue.capacity);
@@ -165,7 +167,9 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
 
   rQueue.dequeue();
   rQueue.dequeue();
+  rQueue.sample();
   rQueue.dequeue();
+  rQueue.sample();
   rQueue.dequeue();
   
 
