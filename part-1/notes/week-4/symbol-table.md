@@ -97,7 +97,15 @@ put
  
 Delete
 -
+deleteMin - goto left most and return null to the parent recursive call.
 
+delete ( O(sqrt(N))
+
+ * No Child - return null
+ * One Child - return child
+ * Two child - Find Successor(A left most node in right sub tree) of the node , and replace it with the node
+
+Open problem: For random insert,delete the tree height becomes sqrt(N) not log N. Still searching for algorithm simple and efficient.
 
 Bottom line
 -
