@@ -95,3 +95,9 @@ put
   return null;
   }
  
+
+Bottom line
+-
+ * Insert/Search involves 1 + depth of tree compares
+ * Tree height depends upon the order of insertion
+ 
