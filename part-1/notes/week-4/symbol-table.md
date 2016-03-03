@@ -23,3 +23,48 @@ Elementary symbol table implementations
  * Sequential search with Linked List ( O(n) for insertion and search)
  * Binary search in ordered array ( O(logn) for search but for insert O(n) )
  
+
+
+Binary Search Tree
+=
+
+ classic data structure for efficient implementation of symbol table
+ 
+ Binary search tree is a **binary tree** in **symmetric order**
+ 
+ Binary tree
+ 
+  * Either empty
+  * Two disjoint binary trees (left & right)
+ 
+Symmetric order
+
+ Each node's key is
+ 
+ * Larger than all keys to its left sub tree
+ * Smaller than all keys to its right sub tree
+ 
+Pseudocode
+-
+
+get
+-
+  public Node get(Key key) {
+  
+   Node x = root;
+   
+   while(x != null) {
+   
+    int cmp = x.compareTo(key);
+    
+    if (cmp < 0 ) x = x.left;
+    
+    else if (cmp > 0) x = x.right;
+    
+    else return x;
+   
+   }
+  
+  return null;
+  }
+ 
