@@ -15,3 +15,11 @@ Conventions
  * values are not going to be null
  * method get() returns null if key not present
  * method put() will override the old value with the new one.
+
+
+Elementary symbol table implementations
+-
+
+ * Sequential search with Linked List ( O(n) for insertion and search)
+ * Binary search in ordered array ( O(logn) for search but for insert O(n) )
+ 
