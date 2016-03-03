@@ -95,9 +95,22 @@ put
   return null;
   }
  
+Delete
+-
+
 
 Bottom line
 -
  * Insert/Search involves 1 + depth of tree compares
  * Tree height depends upon the order of insertion
  
+
+Oredered operations in BST
+-
+
+* Min / Max - smallest / largest key
+* For Rank/select methods - maintain count variable in each node and increment while insertion and decrement while deletion.
+* Iteration 
+  + In order (left , root, right ) - yields the result in ascending order
+  + Pre order ( root ,left, right)
+  + Post order ( left, right ,root)
