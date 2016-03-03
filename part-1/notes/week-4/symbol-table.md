@@ -68,3 +68,30 @@ get
   return null;
   }
  
+put
+-
+ public void put(Key key,Value value) {
+ 
+ root = put(root,key,value);
+ 
+ }
+
+  private Node put(Node x, Key key,Value value ) {
+  
+  
+   if(x == null) return new Node(key,value);
+   
+    int cmp = x.compareTo(key);
+    
+    if (cmp < 0 ) x.left = put(x.left,key,value);
+    
+    else if (cmp > 0) x.right = put(x.right,key,value);
+    
+    else x.value = value;
+    
+    return x;
+   }
+  
+  return null;
+  }
+ 
