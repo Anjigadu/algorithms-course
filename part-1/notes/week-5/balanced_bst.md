@@ -45,4 +45,29 @@ Invariants
    
    Guaranteed Lograthimic performance for search and insert
   
+Red-Black BST
+-
 
+Left leaning Red Black tree
+
+ 
+ Equivalent definition
+ 
+  * No Node has two Red links connected to it.
+  * Every path from root to null has same number of black links (Perfect Black balance)
+  * Red links lean left.
+ 
+
+Search
+
+ It's identical to BST but having better performance due to the height.
+ 
+ 
+Left Rotation
+
+ Orient a temporarily right leaning red link to left.
+ 
+ Right Rotation
+ 
+ Orient a left rotating red link temporarily to right link
+ 
