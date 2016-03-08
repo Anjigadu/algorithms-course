@@ -48,6 +48,8 @@ Invariants
 Red-Black BST
 -
 
+Each Node has additional color info. about parent link (red / black bit)
+
 Left leaning Red Black tree
 
  
@@ -67,7 +69,30 @@ Left Rotation
 
  Orient a temporarily right leaning red link to left.
  
- Right Rotation
+Right Rotation
  
  Orient a left rotating red link temporarily to right link
  
+Color Flip
+ 
+ Recolor the parent node to RED from black to avoid having two child links
+
+
+Insertion
+
+* Insert into tree with exactly one node
+  
+   If the new node goes to left, then add it to left and mark RED link
+  
+   If the new node goes to right, then add it to the right; mark as RED link and do left rotate
+
+* Insert into tree with exactly two nodes
+
+   If the new node goes to right(and left has RED link), add it to right; mark it as RED and do color flip (ie mark both links of parent as BLACK and parent 
+   link of parent as RED)
+   
+   If the new node goes to left(and already RED link is in parent),add it to the LEFT, mark it as RED link; Do a right rotate on top node; and color flip
+   
+   If the new node goes in between, Rotate left on bottom node; then rotate right on top node ; and color flip
+   
+   
