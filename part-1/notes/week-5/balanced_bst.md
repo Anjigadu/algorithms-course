@@ -107,14 +107,21 @@ Implementation
     private Node put(Node h, Key key, Value value) {
       
       if (h == null) return new Node(key,value,RED); // add a new node at bottom with RED link
+      
       int cmp = key.compareTo(h.key);
+      
       if (cmp < 0) h.left = put(h.left,key,value);
+      
       else if (cmp > o) h.right = put(h.right,key,value);
+      
       else h.val = val;
       
       if (isRed(h.right) && !isRed(h.left)) h = rotateLeft(h);
+      
       if (isRed(h.left) && isRed(h.left.left)) h = rotateRight(h);
+      
       if (isRed(h.left) && isRed(h.right)) flipColors(h);
       
       return h;
+    
     }
