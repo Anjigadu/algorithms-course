@@ -28,3 +28,17 @@ Hash function
 
 combine each significant field(have to be immutable) using 31x + y
 If primitive use hashCode() of wrapper type
+
+
+
+Separate Chaining (using Linked list)
+
+ At collision put in the top of linked list
+
+ M ~ N/5 (constant)
+ 
+Linear Probing (using bigger hash table)
+
+ At collision put the next empty slot
+ 
+ M has to greater than N
