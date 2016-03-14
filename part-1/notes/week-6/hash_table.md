@@ -31,13 +31,13 @@ If primitive use hashCode() of wrapper type
 
 
 
-Separate Chaining (using Linked list)
+Separate Chaining (using array of Linked list)
 
  At collision put in the top of linked list
 
  M ~ N/5 (constant)
  
-Linear Probing (using bigger hash table)
+Linear Probing (using bigger array ( M > N))
 
  At collision put the next empty slot
  
