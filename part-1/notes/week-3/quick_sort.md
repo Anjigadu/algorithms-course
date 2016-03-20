@@ -182,7 +182,7 @@ pseudocode
  * Let v be the partitioning item a[lo]
  * scan i from left to right (until i crosses gt)
 	+ (a[i] < v ) : exch a[lt] with a[i] & increment i,lt
-	+ (a[i] > v) : exch a[gt] with a[i] & increment gt
+	+ (a[i] > v) : exch a[gt] with a[i] & decrement gt
 	+ (a[i] == v) : increment i
 	
 
@@ -196,7 +196,7 @@ sort(Comparable[] a,int lo,int hi){
  while ( i <=gt) {
  
 	if (a[i] < v) then exch(a,lt++,i++);
-	else if (a[i] > v) then exch(a,gt++,i);
+	else if (a[i] > v) then exch(a,gt--,i);
 	else then i++;
 	
  }
