@@ -47,3 +47,24 @@ Design Pattern
    * Pass the graph object to graph processing routine
    * Query the graph processing routine for the information
 
+
+For DFS keep a data structure contains ( marked array and edgeTo array )
+
+ * marked array is for whether visited or not
+ * edgeTo is used to denote from which vertex the current vertex has been visited
+ 
+
+Application of DFS
+  
+   * Flood fill in photo shope using magic wand. ( consider pixels as vertex )
+
+
+
+Breadth First Search
+-
+
+
+Connected Components
+-
+
+
