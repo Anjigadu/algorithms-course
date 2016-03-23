@@ -158,4 +158,4 @@ Topological Sorting
 Strong connected components
 -
 
- 
+ vertices v & w arre strongly connected iff there is a path from v to w and a path from w to v.
