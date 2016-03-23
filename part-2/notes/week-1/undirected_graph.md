@@ -63,8 +63,41 @@ Application of DFS
 Breadth First Search
 -
 
+ * Repeat until the queue is empty
+     + Remove vertex v from queue
+     + add all the unmarked adjacent vertices of v to queue and mark them as visited
 
+ In the data structure, we are maitaining edgeTo and also dist arrays.
+ 
+ 
+ DFS - putting unvisited vertices on stack
+ BFS - putting unvisited vertices on queue
+ 
+ Shortest path - Find path from s to t with fewest possible number of edges
+ 
+ BFS computes shortest path from source vertex s to all other vertecies in time proportional to E + V
+ 
 Connected Components
 -
 
+vertices s & t are connected if there is a path between them
+
+we want to answer in constant time so we couldn't use union find.
+
+So DFS works well
+
+A connected component is a maximal set of connnected vertices
+
+
+count = 0;
+
+id[];
+
+for ( vertex v in vertices)
+
+ if(v is not visited)
+ 
+ count++;
+ id[v] = count;
+ dfs (v);
 
