@@ -101,3 +101,61 @@ for ( vertex v in vertices)
  id[v] = count;
  dfs (v);
 
+
+
+Directed Graphs
+-
+
+Direction matters and vertices have in degree and out degree
+
+
+Problems
+
+ * path
+ * shortest path
+ * topological sort - can we draw the directed graph so that all edges pointing upwards?
+ * strong connectivity - Is there a directed path from u -> v and v->u
+ * Page Rank - What is the importance of web page?
+ * 
+
+DFS - is same as undirected graph
+
+Applications 
+  * Program flow analysis
+  * Garbage collecter - mark and sweep algorithm
+  
+
+ Reachability
+ Path finding
+ Topological sort
+ Directed cycle detection
+ 
+ 
+ BFS - is same as undirected graph
+ 
+ For **Multiple source shortest path** problem, put all the source vertices into the queue initially instead of one source vertex. That's it. Do BFS as usual
+ 
+ Applications
+ 
+   * Web crawler  ( BFS with impilicit Graph)
+      + Use Queue for sites to be explored
+      + USe Set for visited vertices since we don't know earlier the sites
+ 
+
+Topological Sorting
+-
+
+ Given a set of tasks to be completed, in which order the tasks to be completed
+ 
+ It works only on DAG -  (Directed Acyclic Graph)
+ 
+ 
+  Run DFS on graph
+  Whenever a vertex is done put it into a stack ( post order)
+  
+  return the stack
+
+Strong connected components
+-
+
+ 
