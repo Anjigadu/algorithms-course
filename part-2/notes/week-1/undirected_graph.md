@@ -159,3 +159,22 @@ Strong connected components
 -
 
  vertices v & w arre strongly connected iff there is a path from v to w and a path from w to v.
+
+
+There are multiple ways.
+
+kosaraju - sharir algorithm / Linear two pass dfs algorithm
+
+
+Idea is based on the intuition that strong components are in G and G^R (reverse) are same
+
+
+Pseudocode
+-
+
+  * Compute reverse post order in Reverse Graph
+  * Run DFS, in the order of computed reverse post order unmarkes vertices instead of 0.. N-1 and update the strong conn. components array as in connected components
+  * 
+   
+
+ 
